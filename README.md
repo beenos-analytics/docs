@@ -30,7 +30,7 @@
     <title>トップページ</title>
 　　<script>
       function(w, d, o, e, f){ w['BAObject'] = o; w[o] = {}; w[o].track = w[o].track || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].init = w[o].init || function(t) { w[o].k = t; }; e = d.createElement('script'), e.type = 'text/javascript'; f = d.getElementsByTagName('script')[0]; e.async = 1; e.src = ('https:' === w.location.protocol ? 'https:' : 'http:') + '//#{@hostname}/ba.minified.js'; f.parentNode.insertBefore(e, f)})(window, document, 'BeenosAnalytics');
-      (function() { BeenosAnalytics.init('<b><font color='green'>YOUR_TOKEN</font></b>'); })();
+      (function() { BeenosAnalytics.init('YOUR_TOKEN'); })();
     </script>
   <head>
   <body>
@@ -43,6 +43,60 @@
 
 これでページ内のイベントをトラックする準備ができました。次にイベントのトラッキングを行います。
 
+###トラッキング
 イベントは、ほんの数行のjavaScriptでBEENOS Analyticsに送る事が出来ます。
 BeenosAnalytics.trackの関数をイベント名と任意のプロパティを指定して呼び出す事によってBEENOS Analyticsに送られます。
 
+呼び出しのタグは以下の様な形になります
+```
+BeenosAnalytics.track("イベント名", {
+  "プロパティ１": プロパティ１の値,　//実際の値は”電化製品”など
+  "プロパティ２": プロパティ２の値　　//実際の値は235908など
+});
+```
+
+実際の値を入れた例
+```
+BeenosAnalytics.track("カートイン", {
+  "カテゴリー": ”靴”,
+  "item_id" : 23487
+});
+```
+
+上記例の”靴”や23487の値の代わりにjavaScriptの変数を入れることも可能です
+```
+BeenosAnalytics.track("カートイン", {
+  "カテゴリー": category,
+  "item_id" : itemID
+});
+```
+
+プロパティを指定せずにイベントを送る事も出来ます。
+```
+BeenosAnalytics.track("詳細を見る");
+```
+
+ボタンクリック時にイベントを送る例
+```
+$("#detailsBtn").on("click", function(e) {
+  BeenosAnalytics.track("詳細を見る")
+});
+```
+
+ページ閲覧時にイベントを送る場合はタグを、先ほど入れたスクリプトの下に置きます。
+```
+<html lang="en-US">
+  <head>
+    <title>トップページ</title>
+　　<script>
+      function(w, d, o, e, f){ w['BAObject'] = o; w[o] = {}; w[o].track = w[o].track || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].init = w[o].init || function(t) { w[o].k = t; }; e = d.createElement('script'), e.type = 'text/javascript'; f = d.getElementsByTagName('script')[0]; e.async = 1; e.src = ('https:' === w.location.protocol ? 'https:' : 'http:') + '//#{@hostname}/ba.minified.js'; f.parentNode.insertBefore(e, f)})(window, document, 'BeenosAnalytics');
+      (function() { BeenosAnalytics.init('YOUR_TOKEN'); })();
+
+      BeenosAnalytics.track("トップページ閲覧")
+    </script>
+  <head>
+  <body>
+  ...
+  </body>
+</html>
+```
