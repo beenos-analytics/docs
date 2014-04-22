@@ -105,7 +105,7 @@ $("#detailsBtn").on("click", function(e) {
 
 ユーザーIDを指定される場合、以下の通りにtrack_user_idのプロパティを設定してください。下記の例ではプロパティの値に変数を入れています。
 
-<font color='red'>コホート画面を正しく使う為にはタグでのtrack_user_idの指定は必須です。</font>
+#####コホート画面を正しく使う為にはタグでのtrack_user_idの指定は必須です。
 ```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
