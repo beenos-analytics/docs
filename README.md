@@ -99,3 +99,16 @@ $("#detailsBtn").on("click", function(e) {
   </body>
 </html>
 ```
+
+##おすすめの設定
+より正確にユーザー行動を分析する為に実際サイトやアプリ内で使われているユーザーIDをタグに指定する事をおすすめします。
+
+ユーザーIDを指定される場合、以下の通りにtrack_user_idのプロパティを設定してください。下記の例ではプロパティの値に変数を入れています。
+コホート画面を正しく使う為にはタグでのtrack_user_idの指定は必須です。
+```
+BeenosAnalytics.track("カートイン", {
+  "カテゴリー": category,
+  "item_id" : itemID,
+  "track_user_id": userID #ユーザーIDの指定
+});
+```
