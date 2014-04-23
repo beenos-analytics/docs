@@ -31,7 +31,7 @@
       (function(w, d, o, e, f){w['BAObject'] = o;w[o] = {};w[o].track = w[o].track || function() { (w[o].q = w[o].q || []).push(arguments) };w[o].init = w[o].init || function(t) { w[o].k = t; };e = d.createElement('script');e.type = 'text/javascript';e.async = 1;e.src = ("https:" === w.location.protocol ? "https:" : "http:") + '//api.beenos-analytics.com/ba.minified.js';f = d.getElementsByTagName('script')[0];f.parentNode.insertBefore(e, f)})(window, document, 'BeenosAnalytics');
       (function() {BeenosAnalytics.init('YOUR_TOKEN');})();
     </script>
-  <head>
+  </head>
   <body>
   ...
   </body>
