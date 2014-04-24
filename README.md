@@ -58,7 +58,7 @@ BeenosAnalytics.track("イベント名", {
 ```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": ”靴”,
-  "item_id" : 23487
+  "ブランド名" : "addidas"
 });
 ```
 
@@ -66,7 +66,7 @@ BeenosAnalytics.track("カートイン", {
 ```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
-  "item_id" : itemID
+  "ブランド名" : brand_name
 });
 ```
 
@@ -109,7 +109,7 @@ $("#detailsBtn").on("click", function(e) {
 ```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
-  "item_id" : itemID,
+  "ブランド名" : brand_name,
   "track_user_id": userID #ユーザーIDの指定
 });
 ```
