@@ -14,7 +14,7 @@
 トラックしたいイベントが起こるHTMLページの\<head>部分の一番下に（\</head>の真上）に以下のスクリプトをコピー＆ペーストし、ページ内のイベントをトラック出来る様にします。
 
 ###スクリプト
-```javascript
+```
 <script>
   (function(w, d, o, e, f){w['BAObject'] = o;w[o] = {};w[o].track = w[o].track || function() { (w[o].q = w[o].q || []).push(arguments) };w[o].init = w[o].init || function(t) { w[o].k = t; };e = d.createElement('script');e.type = 'text/javascript';e.async = 1;e.src = ("https:" === w.location.protocol ? "https:" : "http:") + '//api.beenos-analytics.com/ba.minified.js';f = d.getElementsByTagName('script')[0];f.parentNode.insertBefore(e, f)})(window, document, 'BeenosAnalytics');
   (function() {BeenosAnalytics.init('YOUR_TOKEN');})();
@@ -22,7 +22,7 @@
 ```
 
 ページ内では、この位置に入れて下さい
-```javascript
+```
 <!DOCTYPE HTML>
 <html lang="en-US">
   <head>
@@ -47,7 +47,7 @@
 BeenosAnalytics.trackの関数をイベント名と任意のプロパティを指定して呼び出す事によってBEENOS Analyticsに送られます。
 
 呼び出しのタグは以下の様な形になります
-```javascript
+```
 BeenosAnalytics.track("イベント名", {
   "プロパティ１": プロパティ１の値,　//実際の値は”電化製品”など
   "プロパティ２": プロパティ２の値　　//実際の値は235908など
@@ -55,7 +55,7 @@ BeenosAnalytics.track("イベント名", {
 ```
 
 実際の値を入れた例
-```javascript
+```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": ”靴”,
   "ブランド名" : "addidas"
@@ -63,7 +63,7 @@ BeenosAnalytics.track("カートイン", {
 ```
 
 上記例の”靴”や23487の値の代わりにjavaScriptの変数を入れることも可能です
-```javascript
+```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
   "ブランド名" : brand_name
@@ -71,19 +71,19 @@ BeenosAnalytics.track("カートイン", {
 ```
 
 プロパティを指定せずにイベントを送る事も出来ます。
-```javascript
+```
 BeenosAnalytics.track("詳細を見る");
 ```
 
 ボタンクリック時にイベントを送る例
-```javascript
+```
 $("#detailsBtn").on("click", function(e) {
   BeenosAnalytics.track("詳細を見る")
 });
 ```
 
 ページ閲覧時にイベントを送る場合はタグを、先ほど入れたスクリプトの下に置きます。
-```javascript
+```
 <html lang="en-US">
   <head>
     <title>トップページ</title>
@@ -106,7 +106,7 @@ $("#detailsBtn").on("click", function(e) {
 ユーザーIDを指定される場合、以下の通りにtrack_user_idのプロパティを設定してください。下記の例ではプロパティの値に変数を入れています。
 
 #####コホート画面を正しく使う為にはタグでのtrack_user_idの指定は必須です。
-```javascript
+```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
   "ブランド名" : brand_name,
