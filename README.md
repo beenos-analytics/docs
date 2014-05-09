@@ -62,7 +62,8 @@ BeenosAnalytics.track("カートイン", {
 });
 ```
 
-上記例の”靴”や23487の値の代わりにjavaScriptの変数を入れることも可能です
+上記例の”靴”や”addidas”の値の代わりにjavaScriptの変数を入れることも可能です
+注：現在プロパティの値は10個程までの上限を付けるとより見やすく表示されます。
 ```
 BeenosAnalytics.track("カートイン", {
   "カテゴリー": category,
@@ -98,18 +99,4 @@ $("#detailsBtn").on("click", function(e) {
   ...
   </body>
 </html>
-```
-
-##設定に関する注意点
-より正確にユーザー行動を分析する為にサイト内やアプリ内で使われている実際のユーザーIDをタグに指定する事をおすすめします。
-
-ユーザーIDを指定される場合、以下の通りにtrack_user_idのプロパティを設定してください。下記の例ではプロパティの値に変数を入れています。
-
-#####コホート画面を正しく使う為にはタグでのtrack_user_idの指定は必須です。
-```
-BeenosAnalytics.track("カートイン", {
-  "カテゴリー": category,
-  "ブランド名" : brand_name,
-  "track_user_id": userID #ユーザーIDの指定
-});
 ```
