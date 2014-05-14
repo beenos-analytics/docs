@@ -1,10 +1,5 @@
 # Android用SDK
 
-## ビルド方法
-
-教えない。
-
-
 ## 導入方法
 
 - プロジェクトのlibs以下にBeenosAnalytics.jarを配置。
