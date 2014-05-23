@@ -11,13 +11,12 @@
 
 @interface BeenosAnalytics : NSObject
 
-+(id) sharedManager;
++ (id)sharedManager;
 
--(void) bootstrap:(NSString *)api_key;
+- (void)bootstrap:(NSString *)apiKey;
 
--(void) track:(NSString *)event_name;
+- (void)track:(NSString *)eventName;
 
--(void) track:(NSString *)event_name
-  custom_data:(NSDictionary *)custom_data;
+- (void)track:(NSString *)eventName withCustomData:(NSDictionary *)customData;
 
 @end
