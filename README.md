@@ -95,7 +95,7 @@ $("#detailsBtn").on("click", function(e) {
 
       BeenosAnalytics.track("トップページ閲覧")
     </script>
-  <head>
+  </head>
   <body>
   ...
   </body>
